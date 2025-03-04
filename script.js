@@ -37,37 +37,41 @@ document.addEventListener("DOMContentLoaded", () => {
   function typeEffect() {
     // Clear any existing timeout
     if (typingTimeout) {
-      clearTimeout(typingTimeout)
+        clearTimeout(typingTimeout);
     }
 
-    const currentText = textArray[textIndex]
+    const currentText = textArray[textIndex];
 
     if (isTyping) {
-      // Typing mode
-      if (charIndex < currentText.length) {
-        // Continue typing the current text
-        typingTextElement.textContent = currentText.substring(0, charIndex + 1)
-        charIndex++
-        typingTimeout = setTimeout(typeEffect, typingSpeed)
-      } else {
-        // Finished typing, pause before erasing
-        isTyping = false
-        typingTimeout = setTimeout(typeEffect, pauseDuration)
-      }
+        // Typing mode
+        if (charIndex < currentText.length) {
+            // Continue typing the current text
+            typingTextElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+            typingTimeout = setTimeout(typeEffect, typingSpeed);
+        } else {
+            // Finished typing, pause before erasing
+            isTyping = false;
+            typingTimeout = setTimeout(typeEffect, pauseDuration);
+        }
     } else {
-      // Erasing mode
-      if (charIndex > 0) {
-        // Continue erasing the current text
-        typingTextElement.textContent = currentText.substring(0, charIndex - 1)
-        charIndex--
-        typingTimeout = setTimeout(typeEffect, erasingSpeed)
-      } else {
-        // Finished erasing, move to next text
-        isTyping = true
-        textIndex = (textIndex + 1) % textArray.length
-        typingTimeout = setTimeout(typeEffect, typingSpeed)
-      }
+        // Erasing mode
+        if (charIndex > 0) {
+            // Continue erasing the current text
+            typingTextElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+            typingTimeout = setTimeout(typeEffect, erasingSpeed);
+        } else {
+            // Finished erasing, move to next text
+            isTyping = true;
+            textIndex = (textIndex + 1) % textArray.length;
+            typingTimeout = setTimeout(typeEffect, typingSpeed);
+        }
     }
+
+    // Update cursor position
+    const cursor = document.querySelector('.cursor');
+    cursor.style.left = `${typingTextElement.offsetWidth + 4}px`; // Position cursor after the text
   }
 
   // Start the typing effect
