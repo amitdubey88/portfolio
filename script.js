@@ -9,16 +9,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
  
   // Text array to cycle through
-  const textArray = [
-    "Salesforce Developer",
-    "Salesforce Certified",
-    "Apex & LWC Expert",
-    "Agentforce",
-    "HTML, CSS, JavaScript",
-    "Experience Cloud",
-    "Health Cloud",
-    "Double Star Ranger @ Trailhead",
-  ]
+ const textArray = [
+    "a Salesforce Developer.",
+    "Salesforce Certified & Skilled.",
+    "an Apex & LWC Expert.",
+    "passionate about Agentforce.",
+    "proficient in HTML, CSS, and JavaScript.",
+    "experienced in Experience Cloud.",
+    "exploring Health Cloud innovations.",
+    "a Double Star Ranger @ Trailhead."
+];
 
   // DOM element
   const typingTextElement = document.getElementById("typing-text")
