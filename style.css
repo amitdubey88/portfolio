@@ -543,33 +543,27 @@ margin-bottom:20px;
 
 @media (max-width: 992px) {
     .typing-text {
-        font-size: 1.5rem; /* Smaller font size for smaller screens */
+        font-size: 1.6rem; /* Smaller font size for smaller screens */
     }
      .cursor{
-        height:1.52rem;
-        align-items: top;
+        height:1.62rem;
     }
 }
 
 @media (max-width: 768px) {
     .typing-text {
-        font-size: 1.2rem; /* Even smaller font size for mobile screens */
+        font-size: 1.4rem; /* Even smaller font size for mobile screens */
     }
      .cursor{
-        height:1.22rem;
-        align-items: top;
-    }
-    .title{
-        font-size: 1.2rem;
+        height:1.42rem;
     }
 }
 
 @media (max-width: 576px) {
     .typing-text {
-        font-size: 1rem; /* Smallest font size for very small screens */
+        font-size: 1.2rem; /* Smallest font size for very small screens */
     }
     .cursor{
-        height:1.02rem;
-        align-items: top;
+        height:1.22rem;
     }   
 }
