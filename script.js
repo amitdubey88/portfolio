@@ -1,8 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-        document.getElementById("loader").classList.add("hidden");
-    }, 1000); // Ensures loader is shown for at least 1 second
-
+   
     // Text array to cycle through
     const textArray = [
         "Salesforce Developer",
