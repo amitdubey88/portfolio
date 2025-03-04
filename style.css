@@ -152,10 +152,19 @@ margin-bottom:20px;
     height: 1.8rem;
     background: linear-gradient(to bottom, #ff69b4, #9370db);
     margin-left: 4px;
-    animation: blink 1s infinite;
+    animation: bounce 0.7s infinite; /* Use the new bounce animation */
     vertical-align: middle;
     box-shadow: 0 0 15px #ff69b4;
-    border-radius: 4px;
+}
+
+/* Keyframes for bouncing effect */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at the original position */
+    }
+    50% {
+        transform: translateY(-10px); /* Move up by 10px */
+    }
 }
 
 /* Social Media Links */
