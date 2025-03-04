@@ -251,7 +251,7 @@ margin-bottom:20px;
     height: 1.8rem;
     background: linear-gradient(to bottom, #ff69b4, #9370db);
     margin-left: 4px;
-    animation: blink 1s infinite;
+    animation: blink .3s infinite;
     vertical-align: middle;
     box-shadow: 0 0 15px #ff69b4;
     border-radius: 4px;
