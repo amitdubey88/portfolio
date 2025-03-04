@@ -144,7 +144,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Start the typing effect
   typeEffect()
-
+  document.getElementById("year").textContent = new Date().getFullYear();
+  
   // Clean up on page unload to prevent memory leaks
   window.addEventListener("beforeunload", () => {
     if (typingTimeout) {
