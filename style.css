@@ -1,6 +1,9 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f9;
+    font-family: 'Roboto', sans-serif; /* Updated font */
+    background-color: #f0f4f8; /* Lighter background */
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -11,8 +14,8 @@ body {
 #loader {
     position: fixed;
     width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent */
     height: 100%;
-    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,14 +47,16 @@ body {
 
 
 /* Navbar */
+
+/* Navbar */
 .navbar {
-    background: linear-gradient(to right, #007bff, #6610f2);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-brand, .nav-link {
     color: white !important;
-    font-weight: 500;
+    font-weight: 600; /* Slightly bolder */
     transition: color 0.3s ease;
 }
 
@@ -141,6 +146,11 @@ body {
 }
 
 
+
+.hero::before {
+    
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -156,12 +166,12 @@ body {
 
 .hero::before {
     content: '';
+    background: rgba(0, 0, 0, 0.6); /* Darker overlay */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay */
 }
 
 .hero .container {
@@ -172,15 +182,25 @@ body {
 .profile-image {
     width: 180px;
     height: 180px;
+    border: 6px solid #6a11cb; /* Updated border color */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* Deeper shadow */
     border-radius: 50%;
-    border: 6px solid #007bff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
     margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
 
 .profile-image:hover {
     transform: scale(1.05);
+}
+
+.btn-primary, .btn-secondary {
+    border-radius: 25px; /* Rounded buttons */
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .typing-container {
@@ -346,12 +366,13 @@ margin-bottom:20px;
 }
 
 .skills span {
-    background: #e9ecef;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9em;
     color: #333;
     transition: background 0.3s ease, transform 0.2s ease;
+    background: #e0e7ff; /* Light background for skills */
+    color: #1e3a8a; /* Darker text color */
 }
 
 .skills span:hover {
@@ -451,16 +472,18 @@ margin-bottom:20px;
     transform: translateY(-3px);
 }
 
+
 /* Footer */
 .footer {
-    background: #343a40;
-    color: white;
+    background: #1f2937; /* Darker footer */
+    color: #f9fafb; /* Light text color */
     text-align: center;
     padding: 10px;
     font-size: 0.9em;
 }
 
-/* Responsive Design */
+
+
 @media (max-width: 992px) {
     .hero {
         height: auto;
@@ -482,6 +505,9 @@ margin-bottom:20px;
 }
 
 @media (max-width: 768px) {
+    .hero{
+        padding: 100px 0; /* Adjust padding for smaller screens */
+    }
     .profile-image {
         width: 120px;
         height: 120px;
