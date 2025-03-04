@@ -369,6 +369,65 @@ margin-bottom:20px;
     transform: translateY(-3px);
 }
 
+/* Career Section */
+.career-section {
+    padding: 100px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.career-section h2 {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #007bff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.career-item {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.career-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
+}
+
+.career-item h3 {
+    font-size: 1.5em;
+    color: #007bff;
+}
+
+.career-item p {
+    font-size: 1em;
+    color: #555;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .career-item {
+        padding: 15px;
+    }
+
+    .career-section h2 {
+        font-size: 2.5em;
+    }
+}
+
 /* Footer */
 .footer {
     background: #343a40;
