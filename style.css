@@ -544,6 +544,7 @@ margin-bottom:20px;
     }
      .cursor{
         height:1.52rem;
+        vertical-align: top;
     }
 }
 
@@ -553,6 +554,7 @@ margin-bottom:20px;
     }
      .cursor{
         height:1.22rem;
+        vertical-align: top;
     }
     .title{
         font-size: 1.2rem;
@@ -565,5 +567,6 @@ margin-bottom:20px;
     }
     .cursor{
         height:1.02rem;
+        vertical-align: top;
     }   
 }
