@@ -1,18 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const careerItems = document.querySelectorAll('.career-item');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    });
-
-    careerItems.forEach(item => {
-        observer.observe(item);
-    });
   
   setTimeout(() => {
         document.getElementById("loader").classList.add("hidden");
