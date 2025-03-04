@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("loader").classList.add("hidden");
     }, 1000); // Ensures loader is shown for at least 1 second
   // Text array to cycle through
-
+  document.getElementById('year').textContent = new Date().getFullYear();
 
  
   // Text array to cycle through
@@ -14,11 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "Salesforce Certified",
     "Apex & LWC Expert",
     "Agentforce",
-    "HTML, CSS, JavaScript, Java",
+    "HTML, CSS, JavaScript",
     "Experience Cloud",
-    "Health Cloud Enthusiast",
+    "Health Cloud",
     "Double Star Ranger @ Trailhead",
-    "Driving Innovation with Salesforce Solutions"
   ]
 
   // DOM element
