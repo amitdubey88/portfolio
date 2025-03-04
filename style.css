@@ -527,3 +527,28 @@ margin-bottom:20px;
         height: 200px;
     }
 }
+
+/* Media Queries for Responsive Font Size */
+@media (max-width: 1200px) {
+    .typing-text {
+        font-size: 1.8rem; /* Smaller font size for medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .typing-text {
+        font-size: 1.5rem; /* Smaller font size for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .typing-text {
+        font-size: 1.2rem; /* Even smaller font size for mobile screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .typing-text {
+        font-size: 1rem; /* Smallest font size for very small screens */
+    }
+}
