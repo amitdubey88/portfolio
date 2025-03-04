@@ -147,9 +147,6 @@ body {
 
 
 
-.hero::before {
-    
-}
 
 /* Hero Section */
 .hero {
@@ -223,9 +220,9 @@ margin-bottom:20px;
     color: white;
     text-decoration: none;
     padding: 10px 12px;
-    border-radius: 8px;
+    border-radius: 25px; /* Rounded buttons */
+    transition: all 0.3s ease;
     background: linear-gradient(to right, #ff69b4, #9370db); /* Pink to Purple */
-    transition: all 0.3s ease-in-out;
     box-shadow: 0 3px 8px rgba(147, 112, 219, 0.3);
 }
 
