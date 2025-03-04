@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "passionate about Agentforce.",
     "proficient in HTML, CSS, and JavaScript.",
     "experienced in Experience Cloud.",
+    "worked on Sales & Service Cloud.",
     "exploring Health Cloud innovations.",
     "a Double Star Ranger @ Trailhead."
 ];
