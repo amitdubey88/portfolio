@@ -533,11 +533,17 @@ margin-bottom:20px;
     .typing-text {
         font-size: 1.8rem; /* Smaller font size for medium screens */
     }
+     .cursor{
+        height:1.82rem;
+    }
 }
 
 @media (max-width: 992px) {
     .typing-text {
         font-size: 1.5rem; /* Smaller font size for smaller screens */
+    }
+     .cursor{
+        height:1.52rem;
     }
 }
 
@@ -545,10 +551,19 @@ margin-bottom:20px;
     .typing-text {
         font-size: 1.2rem; /* Even smaller font size for mobile screens */
     }
+     .cursor{
+        height:1.22rem;
+    }
+    .title{
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 576px) {
     .typing-text {
         font-size: 1rem; /* Smallest font size for very small screens */
     }
+    .cursor{
+        height:1.02rem;
+    }   
 }
