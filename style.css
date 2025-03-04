@@ -249,6 +249,7 @@ margin-bottom:20px;
     display: inline-block;
     width: 3px;
     height: 1.8rem;
+    vertical-align:center;
     background: linear-gradient(to bottom, #ff69b4, #9370db);
     margin-left: 4px;
     animation: blink .3s infinite;
@@ -544,7 +545,7 @@ margin-bottom:20px;
     }
      .cursor{
         height:1.52rem;
-        vertical-align: top;
+        align-items: top;
     }
 }
 
@@ -554,7 +555,7 @@ margin-bottom:20px;
     }
      .cursor{
         height:1.22rem;
-        vertical-align: top;
+        align-items: top;
     }
     .title{
         font-size: 1.2rem;
@@ -567,6 +568,6 @@ margin-bottom:20px;
     }
     .cursor{
         height:1.02rem;
-        vertical-align: top;
+        align-items: top;
     }   
 }
