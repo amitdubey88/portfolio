@@ -2,9 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    color: #2c3e50; /* Dark navy color */
+}
+
 body {
-    font-family: 'Roboto', sans-serif; /* Updated font */
-    background-color: #f0f4f8; /* Lighter background */
+   font-family: 'Poppins', sans-serif; /* Clean sans-serif font */
+    background-color: #f8f9fa;  /* Lighter background */
     color: #333;
     line-height: 1.6;
     margin: 0;
