@@ -25,4 +25,39 @@ body {
     align-items: center;
     text-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
 }
+/* Media Queries for Responsive Font Size */
+@media (max-width: 1200px) {
+    #typing-text {
+        font-size: 1.8rem; /* Smaller font size for medium screens */
+    }
+     .cursor{
+        height:1.82rem;
+    }
+}
 
+@media (max-width: 992px) {
+    #typing-text {
+        font-size: 1.6rem; /* Smaller font size for smaller screens */
+    }
+     .cursor{
+        height:1.62rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #typing-text {
+        font-size: 1.4rem; /* Even smaller font size for mobile screens */
+    }
+     .cursor{
+        height:1.42rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #typing-text {
+        font-size: 1.2rem; /* Smallest font size for very small screens */
+    }
+    .cursor{
+        height:1.22rem;
+    }   
+}
