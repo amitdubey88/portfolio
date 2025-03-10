@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Salesforce Certified & Skilled.",
     "an Apex & LWC Expert.",
     "passionate about Agentforce.",
-    "proficient in HTML, CSS, and JavaScript.",
+    "proficient in HTML, CSS, and JS.",
     "experienced in Experience Cloud.",
     "exploring Health Cloud innovations.",
     "a Double Star Ranger @ Trailhead."
@@ -18,9 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const typingTextElement = document.getElementById("typing-text")
 
   // Timing variables (in milliseconds)
-  const typingSpeed = 10 // Speed for typing characters
-  const erasingSpeed = 10 // Speed for erasing characters (faster)
-  const pauseDuration = 2000 // 2 seconds pause between texts
+  const typingSpeed = 5 // Speed for typing characters
+  const erasingSpeed = 5 // Speed for erasing characters (faster)
+  const pauseDuration = 2500 // 2 seconds pause between texts
 
   // State variables
   let textIndex = 0
