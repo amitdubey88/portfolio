@@ -305,3 +305,7 @@ body {
         .skill-tag:hover::after {
             left: 100%;
         }
+
+#loader {
+    transition: opacity 0.5s ease-out;
+}
