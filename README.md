@@ -5,8 +5,7 @@
 ---
 
 ## 📌 Features
-✅ **Beautiful & Responsive UI** - Fully optimized for **desktop & mobile**  
-✅ **Dark Mode Toggle** - Seamlessly switch between **light & dark mode**  
+✅ **Beautiful & Responsive UI** - Fully optimized for **desktop & mobile**   
 ✅ **Dynamic Typing Effect** - Animated text describing my **skills & expertise**  
 ✅ **Smooth Animations** - Hover effects & animated page elements  
 ✅ **Projects Section** - Showcasing my work with **Experience Cloud, LWC, Integrations, and more**  
