@@ -37,7 +37,7 @@
 ## 🚀 How to Use
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/your-portfolio.git
+   git clone https://github.com/amitsince2001/portfolio.git
    ```
 2. Open `index.html` in your browser.  
 3. Customize the **content & images** as needed.  
