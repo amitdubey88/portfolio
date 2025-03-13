@@ -37,7 +37,7 @@
 ## 🚀 How to Use
 1. Clone the repository:
    ```sh
-   git clone https://github.com/amitsince2001/portfolio.git
+   git clone https://github.com/amitdubey88/portfolio.git
    ```
 2. Open `index.html` in your browser.  
 3. Customize the **content & images** as needed.  
@@ -55,7 +55,7 @@ You can **easily modify**:
 
 ## 📬 Contact
 📩 **Email:** [amitdubey19990808@gmail.com](mailto:amitdubey19990808@gmail.com)  
-🌐 **Website:** [My Portfolio](https://amitsince2001.github.io/portfolio)<br/>
+🌐 **Website:** [My Portfolio](https://amitdubey88.github.io/portfolio)<br/>
 💼 **LinkedIn:** [linkedin.com/in/amitdubey88](https://www.linkedin.com/in/amitdubey88)  
 🌟 **Trailblazer Profile:** [Salesforce Trailblazer](https://www.salesforce.com/trailblazer/amitkdubey)  
 
