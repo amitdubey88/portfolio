@@ -17,7 +17,7 @@
 ## 🛠️ Technologies Used
 - **HTML5**  
 - **Tailwind CSS** (for styling)  
-- **JavaScript** (for animations & theme toggle)  
+- **JavaScript** (for animations)  
 - **FontAwesome** (for icons)  
 
 ---
