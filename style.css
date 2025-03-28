@@ -35,7 +35,7 @@ body {
     #typing-text {
         font-size: 1.8rem; /* Smaller font size for medium screens */
     }
-     .typed-cursor{
+     .cursor{
         height:1.82rem;
     }
 }
@@ -44,7 +44,7 @@ body {
     #typing-text {
         font-size: 1.6rem; /* Smaller font size for smaller screens */
     }
-     .typed-cursor{
+     .cursor{
         height:1.62rem;
     }
 }
@@ -53,7 +53,7 @@ body {
     #typing-text {
         font-size: 1.4rem; /* Even smaller font size for mobile screens */
     }
-     .typed-cursor{
+     .cursor{
         height:1.42rem;
     }
 }
@@ -62,7 +62,7 @@ body {
     #typing-text {
         font-size: 1.2rem; /* Smallest font size for very small screens */
     }
-    .typed-cursor{
+    .cursor{
         height:1.22rem;
     }   
 }
@@ -167,7 +167,7 @@ body {
             display: inline-block;
         }
         
-        .typed-cursor {
+        .cursor {
             display: inline-block;
             width: 3px;
             background: linear-gradient(to bottom, #6366f1, #ec4899);
