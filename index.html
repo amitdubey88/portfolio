@@ -76,49 +76,69 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('./img/971.jpg')">
-        <div class="absolute inset-0 bg-gradient-to-b from-gray-900 to-indigo-900 opacity-80"></div>
-        
-        <!-- Animated Background -->
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="stars-container"></div>
-        </div>
-        
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <div class="flex flex-col items-center">
-                <div class="relative mb-8">
+   <section id="home"
+    class="relative min-h-screen flex items-center bg-cover bg-left px-8 pt-28 md:pt-32 lg:pt-20 overflow-hidden"
+    style="background-image: url('./img/971.jpg');">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="stars-container"></div>
+    </div>
+
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-indigo-900 opacity-80"></div>
+
+    <div class="container mx-auto relative z-10">
+        <!-- Responsive Layout: Column on small screens, Row on large screens -->
+        <div class="flex flex-col lg:flex-row items-center lg:items-start justify-between">
+
+            <!-- Profile Image: Above text on small screens, slightly left on large screens -->
+            <div class="relative mb-8 lg:mb-0 lg:order-2 lg:w-1/2 flex justify-start lg:justify-end lg:pr-16">
+                <div class="relative">
                     <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-75 blur"></div>
-                    <img src="./img/profile.png" alt="Amit Dubey" class="relative w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-white animate-float">
+                    <img src="./img/profile.png" alt="Amit Dubey"
+                        class="relative w-48 h-48 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full border-4 border-white animate-float">
+                    </div>
+                    </div>
+
+            <!-- Left Content (Always Left-Aligned) -->
+            <div class="max-w-2xl text-left w-full lg:w-1/2">
+                <h1 class="text-3xl md:text-5xl font-bold text-white mb-2 animate__animated animate__fadeInDown">
+                    Hello, I'm <span class="animate-wave inline-block">👋</span>
+                </h1>
+                <h2
+                    class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to pink-400 mb-4 animate__animated animate__fadeInUp">
+                    Amit Dubey
+                </h2>
+                <div class="flex">
+                    <span id="typing-text" class="text-xl md:text-3xl font-bold gradient-text"></span>
                 </div>
-                
-                <div class="mb-6">
-                    <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
-                        Hello, I'm <span class="animate-wave inline-block">👋</span>
-                    </h1>
-                    <h2 class="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 mb-4">
-                        Amit Dubey
-                    </h2>
-                </div>
-                
-                <div class="h-16 flex mb-8">
-                        <span id="typing-text" class="text-xl md:text-3xl font-bold gradient-text min-h-[2.5rem]"></span>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="px-8 py-3 bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 text-white font-medium rounded-full shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-opacity-20 flex items-center justify-center">
+                <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                    Welcome to my portfolio! I am a <b>Salesforce Developer</b> with expertise in <b>Apex, Lightning Web
+                        Components (LWC), Flows, and Automation</b>.
+                    Passionate about building <b>scalable, efficient Salesforce solutions</b> to optimize business
+                    processes.
+                    Let’s connect and build something impactful together!
+                </p>
+
+                <!-- Buttons (Always Left-Aligned) -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact"
+                        class="px-8 py-3 bg-white bg-opacity-10 backdrop-blur-lg border border-white border-opacity-20 text-white font-medium rounded-full shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-opacity-20 flex items-center">
                         <span>Let's Connect</span>
                         <i class="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
                     </a>
                     
-                    <a href="https://www.salesforce.com/trailblazer/amitkdubey" target="_blank" class="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium rounded-full shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:from-indigo-600 hover:to-purple-600 flex items-center justify-center">
+                    <a href="https://www.salesforce.com/trailblazer/amitkdubey" target="_blank"
+                        class="px-8 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-medium rounded-full shadow-lg transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:from-indigo-600 hover:to-purple-600 flex items-center">
                         <i class="fas fa-cloud mr-2"></i>
                         <span>Trailblazer Profile</span>
                     </a>
                 </div>
             </div>
-        </div>
+</div>
+    </div>
     </section>
+
 
     <!-- About Section -->
     <section id="about" class="py-24 md:py-32">
