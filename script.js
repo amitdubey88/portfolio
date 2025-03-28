@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 })
 
-const typed = new Typed('.multiple-text', {
+const typed = new Typed('#typing-text', {
     strings: ["a Salesforce Developer.",
     "Salesforce Certified & Skilled.",
     "an Apex & LWC Expert.",
