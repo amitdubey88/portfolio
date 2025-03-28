@@ -2,20 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
         document.getElementById("loader").classList.add("hidden");
     }, 1000); // Ensures loader is shown for at least 1 second
-  // Text array to cycle through
+
+
   const textArray = [
     "a Salesforce Developer.",
+    "proficient in HTML, CSS, and JavaScript.",
     "Salesforce Certified & Skilled.",
     "an Apex & LWC Expert.",
     "passionate about Agentforce.",
-    "proficient in HTML, CSS, and JavaScript.",
     "experienced in Experience Cloud.",
     "exploring Health Cloud innovations.",
     "a Double Star Ranger @ Trailhead."
   ];
 
   // DOM element
-  const typingTextElement = document.getElementById("typing-text");
+  const typingTextElement = document.querySelector(".typing");
 
   // Timing variables (in milliseconds)
   const typingSpeed = 100; // Speed for typing characters
@@ -67,6 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Start the typing effect
   typeEffect();
+
+
 
   // Set current year in footer
   const yearElements = document.querySelectorAll("#year")
