@@ -28,8 +28,6 @@ body {
     min-height: 2.5rem;
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
     text-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
 }
 /* Media Queries for Responsive Font Size */
