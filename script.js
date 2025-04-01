@@ -1,6 +1,8 @@
 
 // Loading Screen
 document.addEventListener('DOMContentLoaded', () => {
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
     const loadingScreen = document.getElementById('loading-screen');
     const loadingStatus = document.querySelector('.loading-status');
 
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, index * 200);
             });
 
+            
             // Reveal masks
             document.querySelectorAll('.reveal-mask').forEach((mask, index) => {
                 setTimeout(() => {
@@ -450,6 +453,3 @@ contactForm.addEventListener('submit', function (e) {
         }, 5000);
     }, 1500);
 });
-
-// Set current year in footer
-document.getElementById('current-year').textContent = new Date().getFullYear();
