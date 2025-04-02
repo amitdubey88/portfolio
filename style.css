@@ -376,3 +376,13 @@
 .blob-animation {
     animation: blob-animation 8s ease-in-out infinite;
 }
+
+/* Custom gradient color (scroll to top) */
+ .scroll-btn {
+  background: linear-gradient(135deg, #3B1D75, #4F2D92); /* Adjust based on your image */
+  box-shadow: 0 4px 10px rgba(75, 42, 142, 0.5);
+}
+.scroll-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(75, 42, 142, 0.7);
+}
