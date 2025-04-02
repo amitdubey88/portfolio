@@ -5,7 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('current-year').textContent = new Date().getFullYear();
     const loadingScreen = document.getElementById('loading-screen');
     const loadingStatus = document.querySelector('.loading-status');
+    
+    const scrollBtn = document.getElementById('scrollToTop');
+    
+    // Show button when scrolling down
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        scrollBtn.classList.remove('opacity-0');
+        scrollBtn.classList.add('opacity-1');
+      } else {
+        scrollBtn.classList.remove('opacity-1');
+        scrollBtn.classList.add('opacity-0');
+      }
+    });
 
+    // Smooth scroll to top on click
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+        
     // Simulate loading progress
     setTimeout(() => { loadingStatus.textContent = "Loading assets... 25%" }, 500);
     setTimeout(() => { loadingStatus.textContent = "Loading assets... 50%" }, 1000);
@@ -454,20 +472,4 @@ contactForm.addEventListener('submit', function (e) {
     }, 1500);
 });
 
-const scrollBtn = document.getElementById('scrollToTop');
 
-// Show button when scrolling down
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    scrollBtn.classList.remove('opacity-0');
-    scrollBtn.classList.add('opacity-1');
-  } else {
-    scrollBtn.classList.remove('opacity-1');
-    scrollBtn.classList.add('opacity-0');
-  }
-});
-
-// Smooth scroll to top on click
-scrollBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
