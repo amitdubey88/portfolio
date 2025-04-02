@@ -453,3 +453,21 @@ contactForm.addEventListener('submit', function (e) {
         }, 5000);
     }, 1500);
 });
+
+const scrollBtn = document.getElementById('scrollToTop');
+
+// Show button when scrolling down
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    scrollBtn.classList.remove('opacity-0');
+    scrollBtn.classList.add('opacity-1');
+  } else {
+    scrollBtn.classList.remove('opacity-1');
+    scrollBtn.classList.add('opacity-0');
+  }
+});
+
+// Smooth scroll to top on click
+scrollBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
