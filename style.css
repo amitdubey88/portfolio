@@ -1,3 +1,15 @@
+/* imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Basics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
@@ -23,6 +35,11 @@
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
 
 @keyframes fadeIn {
@@ -159,7 +176,10 @@
 .typing-text::after {
     content: '|';
     display: inline-block;
-    animation: blink 1s step-end infinite;
+}
+
+.typing-text.blink::after {
+    animation: blink .7s step-end infinite;
 }
 
 @keyframes blink {

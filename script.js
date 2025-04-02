@@ -92,7 +92,7 @@ const texts = [
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingDelay = 100;
+let typingDelay = 50;
 let deletingDelay = 50;
 let pauseDelay = 1500;
 
@@ -104,6 +104,7 @@ function typeText() {
         typingTextElement.textContent = currentText.substring(0, charIndex - 1);
         charIndex--;
         typingDelay = deletingDelay;
+        typingTextElement.classList.remove('blink');
     } else {
         // Typing text
         typingTextElement.textContent = currentText.substring(0, charIndex + 1);
@@ -116,10 +117,12 @@ function typeText() {
         // Finished typing, pause before deleting
         isDeleting = true;
         typingDelay = pauseDelay;
+        typingTextElement.classList.add('blink');
     } else if (isDeleting && charIndex === 0) {
         // Finished deleting, move to next text
         isDeleting = false;
         textIndex = (textIndex + 1) % texts.length;
+        typingTextElement.classList.remove('blink');
     }
 
     setTimeout(typeText, typingDelay);
