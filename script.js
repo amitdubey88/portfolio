@@ -128,7 +128,6 @@ function typeText() {
 // Start typing effect after loading screen
 setTimeout(typeText, 3000);
 
-// Animated Star Background
 const canvas = document.getElementById('star-background');
 const ctx = canvas.getContext('2d');
 
@@ -137,52 +136,51 @@ function setCanvasDimensions() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
-
 setCanvasDimensions();
 window.addEventListener('resize', setCanvasDimensions);
 
 // Star properties
 const stars = [];
 
-// Create stars
 function createStars() {
-    const starCount = Math.floor(canvas.width * canvas.height / 3000);
+    const starCount = Math.floor(canvas.width * canvas.height / 5000); // Reduced density
 
     for (let i = 0; i < starCount; i++) {
         const x = Math.random() * canvas.width;
         const y = Math.random() * canvas.height;
-        const radius = Math.random() * 1.5;
-        const opacity = Math.random();
-        const hue = Math.random() < 0.5 ? 240 : 270; // Blue or purple
-        const color = `hsla(${hue}, 80%, 70%, ${opacity})`;
-        const velocity = Math.random() * 0.05;
+        const radius = Math.random() * 1.5 + 0.5;
+        const opacity = Math.random() * 0.5 + 0.5; // Random initial opacity
+        const twinkleSpeed = Math.random() * 0.05 + 0.02; // Twinkle speed
+        const velocity = Math.random() * 0.2; // Star movement speed
 
-        stars.push({ x, y, radius, color, velocity });
+        stars.push({ x, y, radius, opacity, twinkleSpeed, velocity });
     }
 }
 
-// Draw stars
+// Draw and animate stars
 function drawStars() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Draw gradient background
+    // Gradient background
     const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
     gradient.addColorStop(0, "rgba(10, 15, 26, 1)");
     gradient.addColorStop(1, "rgba(17, 24, 39, 1)");
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw stars
     stars.forEach(star => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = star.color;
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`; // White stars with opacity
         ctx.fill();
 
-        // Move star
-        star.y += star.velocity;
+        // Twinkle effect (oscillating opacity)
+        star.opacity += star.twinkleSpeed * (Math.random() > 0.5 ? 1 : -1);
+        if (star.opacity > 1) star.opacity = 1;
+        if (star.opacity < 0.2) star.opacity = 0.2;
 
-        // Reset star position if it goes off screen
+        // Star movement (falling effect)
+        star.y += star.velocity;
         if (star.y > canvas.height) {
             star.y = 0;
             star.x = Math.random() * canvas.width;
@@ -194,6 +192,7 @@ function drawStars() {
 
 createStars();
 drawStars();
+
 
 // Navbar Scroll Effect
 const navbar = document.getElementById('navbar');
