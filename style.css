@@ -179,7 +179,7 @@
 .typing-text {
     color: #8b5cf6;
     background-clip: text;
-    font-weight: 800;
+    font-weight: bolder;
 }
 
 @keyframes blink {
