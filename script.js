@@ -435,6 +435,7 @@ contactForm.addEventListener('submit', function (e) {
             formStatus.classList.add('hidden');
         }, 5000);
     }, 1500);
+
 });
 
 

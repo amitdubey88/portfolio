@@ -36,12 +36,6 @@
         transform: translateY(0);
     }
 }
-
-.fade-in {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-}
-
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -180,6 +174,12 @@
 
 .typing-text.blink::after {
     animation: blink .7s step-end infinite;
+}
+
+.typing-text {
+    color: #8b5cf6;
+    background-clip: text;
+    font-weight: 800;
 }
 
 @keyframes blink {
