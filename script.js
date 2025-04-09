@@ -92,9 +92,9 @@ const texts = [
 let textIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
-let typingDelay = 50;
-let deletingDelay = 50;
-let pauseDelay = 1500;
+let typingDelay = 30;
+let deletingDelay = 30;
+let pauseDelay = 2000;
 
 function typeText() {
     const currentText = texts[textIndex];
@@ -109,7 +109,7 @@ function typeText() {
         // Typing text
         typingTextElement.textContent = currentText.substring(0, charIndex + 1);
         charIndex++;
-        typingDelay = 100;
+        typingDelay = 30;
     }
 
     // Handle text completion or deletion
