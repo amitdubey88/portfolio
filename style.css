@@ -26,6 +26,51 @@
 }
 
 /* Animations */
+.waving-hand {
+    display: inline-block;
+    /* Allows transform */
+    font-size: 4rem;
+    /* Make it bigger */
+    animation: wave-animation 2s infinite;
+    transform-origin: 70% 70%;
+    /* Set rotation point */
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    /* Wave up */
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(0.0deg)
+    }
+
+    /* Reset */
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -405,4 +450,200 @@
 .scroll-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 15px rgba(75, 42, 142, 0.7);
+}
+
+/* Skills Section */
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dark .skill-bar {
+    background-color: #374151;
+}
+
+.skill-progress {
+    height: 100%;
+    background: linear-gradient(90deg, #0ea5e9, #8b5cf6);
+    border-radius: 4px;
+    width: 0;
+    transition: width 1.5s ease-in-out;
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background-color: #374151;
+    color: #e5e7eb;
+    font-weight: 500;
+    border-radius: 9999px;
+    transition: all 0.3s;
+}
+
+.tech-badge:hover {
+    background-color: #0ea5e9;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(14, 165, 233, 0.2);
+}
+
+/* Timeline */
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-left: auto;
+    width: 50%;
+    padding-left: 3rem;
+}
+
+.timeline-item:nth-child(even) {
+    width: 50%;
+    padding-right: 3rem;
+    text-align: right;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #0ea5e9;
+    border-radius: 50%;
+    border: 4px solid #1f2937;
+    z-index: 1;
+}
+
+
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    left: -10px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: auto;
+    right: -10px;
+}
+
+.timeline-content {
+    background-color: #1f2937;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+}
+
+
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.timeline-date {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: #0ea5e9;
+    color: white;
+    font-weight: 500;
+    border-radius: 9999px;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f3f4f6;
+    margin-bottom: 0.25rem;
+}
+
+
+.timeline-company {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+}
+
+
+.timeline-location {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+    color: #9ca3af;
+}
+
+
+
+.timeline-description {
+    color: #d1d5db;
+    font-size: 0.95rem;
+}
+
+
+
+.timeline-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.75rem;
+}
+
+.timeline-item:nth-child(even) .timeline-list {
+    padding-left: 0;
+    padding-right: 1.5rem;
+    text-align: right;
+    list-style-position: inside;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        padding-left: 2.5rem;
+        padding-right: 0;
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -10px;
+        right: auto;
+    }
+
+    .timeline-item:nth-child(even) .timeline-list {
+        padding-left: 1.5rem;
+        padding-right: 0;
+        text-align: left;
+        list-style-position: outside;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .waving-hand {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .waving-hand {
+        font-size: 2rem;
+    }
 }

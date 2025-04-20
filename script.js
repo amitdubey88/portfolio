@@ -54,6 +54,37 @@ mobileMenuButton.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 });
 
+// Reveal elements on scroll
+function revealElements() {
+    const elements = document.querySelectorAll(".reveal-element")
+    const windowHeight = window.innerHeight
+
+    elements.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top
+        const elementVisible = 150
+
+        if (elementTop < windowHeight - elementVisible) {
+            element.classList.add("active")
+
+            // Animate skill bars if in skills section
+            if (element.closest("#skills")) {
+                const skillBars = element.querySelectorAll(".skill-progress")
+                skillBars.forEach((bar) => {
+                    const width = bar.getAttribute("data-width")
+                    if (width) {
+                        bar.style.width = width
+                    }
+                })
+            }
+        }
+    })
+}
+
+window.addEventListener("scroll", revealElements)
+
+// Initialize reveal on page load
+setTimeout(revealElements, 100)
+
 // Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
