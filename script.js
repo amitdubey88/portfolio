@@ -46,13 +46,110 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 2500);
 });
 
-// Mobile Menu Toggle
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = document.getElementById('menu-icon');
 
-mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+// Store SVG icons for clarity
+const hamburgerIconSVG = `
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>`;
+
+const closeIconSVG = `
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>`;
+
+let isMenuOpen = false;
+
+// Function to open the menu
+function openMenu() {
+    if (isMenuOpen) return;
+
+    isMenuOpen = true;
+    mobileMenu.classList.remove('hidden');
+
+    requestAnimationFrame(() => {
+        mobileMenu.classList.remove('opacity-0', '-translate-y-5', 'scale-95');
+        mobileMenu.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+    });
+
+    menuIcon.innerHTML = closeIconSVG;
+
+    // Add listeners when menu opens
+    setTimeout(() => { // Delay ensures the initial button click isn't caught
+        document.addEventListener('click', handleClickOutside);
+        mobileMenu.addEventListener('click', handleMenuClick); // Add listener for clicks *inside* menu
+    }, 0);
+}
+
+// Function to close the menu
+function closeMenu() {
+    if (!isMenuOpen) return;
+
+    isMenuOpen = false;
+    mobileMenu.classList.remove('opacity-100', 'translate-y-0', 'scale-100');
+    mobileMenu.classList.add('opacity-0', '-translate-y-5', 'scale-95');
+
+    menuIcon.innerHTML = hamburgerIconSVG;
+
+    // Remove listeners when menu closes
+    document.removeEventListener('click', handleClickOutside);
+    mobileMenu.removeEventListener('click', handleMenuClick); // Remove listener for clicks inside menu
+
+    setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+    }, 300); // Match transition duration
+}
+
+// Handler for clicks outside the menu
+function handleClickOutside(event) {
+    if (isMenuOpen &&
+        !mobileMenuButton.contains(event.target) &&
+        !mobileMenu.contains(event.target)) {
+        closeMenu();
+    }
+}
+
+// *** NEW: Handler for clicks *inside* the menu ***
+function handleMenuClick(event) {
+    // Check if the clicked element or its parent is an anchor tag (<a>)
+    // or a button tag (<button>) within the menu.
+    // Adjust the selectors if your menu items use different tags.
+    const clickedItem = event.target.closest('a, button');
+
+    if (clickedItem) {
+        // Optional: Check if the clicked item is *meant* to close the menu.
+        // You could add a specific class or attribute to items that *shouldn't* close it.
+        // Example: if (!clickedItem.hasAttribute('data-no-close')) { ... }
+
+        closeMenu();
+    }
+}
+
+
+// Toggle menu on button click
+mobileMenuButton.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent this click from triggering handleClickOutside
+    if (isMenuOpen) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
 });
+
+// Optional: Close menu on Escape key press
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+    }
+});
+
+// Initial state setup
+mobileMenu.classList.add('hidden', 'opacity-0', '-translate-y-5', 'scale-95');
+menuIcon.innerHTML = hamburgerIconSVG;
+
 
 // Reveal elements on scroll
 function revealElements() {
