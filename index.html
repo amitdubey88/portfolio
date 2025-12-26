@@ -1079,81 +1079,94 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-20 px-4 bg-dark-900 relative">
+<section id="certifications" class="py-20 px-4 bg-dark-900 relative">
   <div class="max-w-6xl mx-auto relative z-10">
-<!-- Header -->
-<div class="text-center mb-10">
-    <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-primary-600">
+    <!-- Header -->
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary-400 to-primary-600">
         Certifications
-    </h2>
+      </h2>
       <p class="text-gray-400 mt-2">
-          Salesforce certifications validating platform expertise, automation, and AI-driven solutions.
+        Salesforce certifications validating platform expertise, automation, and AI-driven solutions.
       </p>
     </div>
-<!-- Summary (Always Visible) -->
+<!-- Summary -->
 <div class="bg-dark-800 border border-primary-700 rounded-xl p-6 shadow-lg">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
         <div>
-            <p class="text-3xl font-bold text-primary-400">3+</p>
-            <p class="text-gray-400 text-sm">Salesforce Certifications</p>
+          <p class="text-3xl font-bold text-primary-400">3+</p>
+          <p class="text-gray-400 text-sm">Salesforce Certifications</p>
         </div>
         <div>
           <p class="text-3xl font-bold text-secondary-400">Admin • Dev • AI</p>
           <p class="text-gray-400 text-sm">Core Salesforce Domains</p>
-          </div>
-          <div>
-              <p class="text-3xl font-bold text-purple-400">Continuous</p>
-              <p class="text-gray-400 text-sm">Learning & Upskilling</p>
-          </div>
-          </div>
+        </div>
+        <div>
+            <p class="text-3xl font-bold text-purple-400">Continuous</p>
+            <p class="text-gray-400 text-sm">Learning & Upskilling</p>
+        </div>
+        </div>
 
-          <!-- Toggle Button -->
-          <div class="text-center mt-6">
-              <button id="toggleCerts"
-                  class="px-6 py-2 rounded-full bg-gradient-to-r from-secondary-500 to-primary-600 text-white font-medium hover:shadow-glow transition-all">
-                  View Certifications
-              </button>
+      <!-- Toggle Button -->
+      <div class="text-center mt-6">
+          <button id="toggleCerts"
+              class="px-6 py-2 rounded-full bg-gradient-to-r from-secondary-500 to-primary-600 text-white font-medium hover:shadow-glow transition-all">
+              View Certifications
+          </button>
+      </div>
+      </div>
+
+    <!-- Expandable Content -->
+    <div id="certificationList"
+        class="mt-10 overflow-hidden max-h-0 opacity-0 translate-y-3 transition-all duration-500 ease-in-out">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Platform Developer -->
+        <div class="bg-dark-800 border border-primary-600 rounded-lg p-6 text-center hover:shadow-glow transition-all">
+            <img src="img/platform-developer-badge.png" alt="Salesforce Platform Developer Badge"
+                class="w-20 h-20 mx-auto mb-4 transition-transform duration-300 hover:scale-110" />
+
+            <h3 class="text-xl font-semibold text-white">
+                Salesforce Certified Platform Developer
+            </h3>
+            <p class="text-gray-400 text-sm mt-1">Salesforce • 2025</p>
+
+          <p class="text-gray-300 mt-3 text-sm">
+              Apex fundamentals, governor limits, SOQL optimization, async processing, and secure coding.
+          </p>
+          <a href="https://www.salesforce.com/trailblazer/amitkdubey" target="_blank"
+              class="inline-block mt-4 text-primary-400 hover:text-primary-300 text-sm">
+              Verify on Trailhead →
+          </a>
           </div>
+<!-- Administrator -->
+<div class="bg-dark-800 border border-secondary-600 rounded-lg p-6 text-center hover:shadow-glow transition-all">
+    <img src="img/admin-badge.png" alt="Salesforce Administrator Badge"
+        class="w-20 h-20 mx-auto mb-4 transition-transform duration-300 hover:scale-110" />
+
+    <h3 class="text-xl font-semibold text-white">
+        Salesforce Certified Platform Administrator
+    </h3>
+    <p class="text-gray-400 text-sm mt-1">Salesforce • 2024</p>
+
+          <p class="text-gray-300 mt-3 text-sm">
+              Data modeling, security, automation, reports, dashboards, and org configuration.
+          </p>
+          <a href="https://www.salesforce.com/trailblazer/amitkdubey" target="_blank"
+              class="inline-block mt-4 text-primary-400 hover:text-primary-300 text-sm">
+              Verify on Trailhead →
+          </a>
           </div>
+<!-- AI Associate -->
+<div class="bg-dark-800 border border-purple-600 rounded-lg p-6 text-center hover:shadow-glow transition-all">
+    <img src="img/ai-associate-badge.png" alt="Salesforce AI Associate Badge"
+        class="w-20 h-20 mx-auto mb-4 transition-transform duration-300 hover:scale-110" />
 
-          <!-- Expandable Content -->
-          <div id="certificationList" class="mt-10 overflow-hidden max-h-0 opacity-0 translate-y-2
-            transition-all duration-500 ease-in-out">
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                  <!-- Certification Card -->
-                  <div class="bg-dark-800 border border-primary-600 rounded-lg p-6 hover:shadow-glow transition-all">
-                      <h3 class="text-xl font-semibold text-white">
-                          Salesforce Certified Platform Developer
-                      </h3>
-                      <p class="text-gray-400 text-sm mt-1">Salesforce • 2025</p>
-                      <p class="text-gray-300 mt-3 text-sm">
-                          Apex fundamentals, governor limits, SOQL optimization, async processing, and secure coding.
-                      </p>
-                      <a href="https://www.salesforce.com/trailblazer/amitkdubey" target="_blank"
-                          class="inline-block mt-4 text-primary-400 hover:text-primary-300 text-sm">
-                          Verify on Trailhead →
-                      </a>
-                  </div>
-                  <div class="bg-dark-800 border border-secondary-600 rounded-lg p-6 hover:shadow-glow transition-all">
-                      <h3 class="text-xl font-semibold text-white">
-                          Salesforce Certified Platform Administrator
-                      </h3>
-                      <p class="text-gray-400 text-sm mt-1">Salesforce • 2024</p>
-                      <p class="text-gray-300 mt-3 text-sm">
-                          Data modeling, security, automation, reports, dashboards, and org configuration.
-                      </p>
-                      <a href="https://www.salesforce.com/trailblazer/amitkdubey" target="_blank"
-                          class="inline-block mt-4 text-primary-400 hover:text-primary-300 text-sm">
-                          Verify on Trailhead →
-                          </a>
-                          </div>
-<div class="bg-dark-800 border border-purple-600 rounded-lg p-6 hover:shadow-glow transition-all">
     <h3 class="text-xl font-semibold text-white">
         Salesforce Certified AI Associate
     </h3>
-    <p class="text-gray-400 text-sm mt-1">Salesforce • 2025</p>
+    <p class="text-gray-400 text-sm mt-1">Salesforce • 2024</p>
+
     <p class="text-gray-300 mt-3 text-sm">
         AI fundamentals, Agentforce concepts, ethical AI, and Salesforce AI use cases.
     </p>
@@ -1164,14 +1177,14 @@
         </div>
 
       </div>
-      </div>
+    </div>
 
   </div>
-  </section>
+</section>
 
 
     <!-- Resume Section -->
-    <section id="resume" class="py-20 px-4 bg-dark-900 relative overflow-hidden">
+    <section id="resume" class="py-5 px-4 bg-dark-900 relative overflow-hidden">
         <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary-900/10 rounded-full blur-3xl animate-float"></div>
         <div
             class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary-900/10 rounded-full blur-3xl animate-float animate-delay-300">
