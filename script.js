@@ -44,6 +44,27 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }, 500);
     }, 2500);
+
+    const toggleBtn = document.getElementById('toggleCerts');
+    const certList = document.getElementById('certificationList');
+
+    if (!toggleBtn || !certList) return;
+
+    let expanded = false;
+
+    toggleBtn.addEventListener('click', () => {
+        expanded = !expanded;
+
+        if (expanded) {
+            certList.classList.remove('max-h-0', 'opacity-0', 'translate-y-2');
+            certList.classList.add('max-h-[1000px]', 'opacity-100', 'translate-y-0');
+            toggleBtn.textContent = 'Hide Certifications';
+        } else {
+            certList.classList.add('max-h-0', 'opacity-0', 'translate-y-2');
+            certList.classList.remove('max-h-[1000px]', 'opacity-100', 'translate-y-0');
+            toggleBtn.textContent = 'View Certifications';
+        }
+    });
 });
 
 const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -563,6 +584,9 @@ contactForm.addEventListener('submit', function (e) {
             formStatus.classList.add('hidden');
         }, 5000);
     }, 1500);
+
+
+
 
 });
 
