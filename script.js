@@ -1,6 +1,18 @@
 
 // Loading Screen
 document.addEventListener('DOMContentLoaded', () => {
+    //scrollBehavior
+    let isUserScrolling = false;
+    let scrollTimeout;
+    window.addEventListener("scroll", () => {
+        isUserScrolling = true;
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            isUserScrolling = false;
+        }, 120);
+    });
+
+
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
     const loadingScreen = document.getElementById('loading-screen');
@@ -198,7 +210,18 @@ function revealElements() {
     })
 }
 
-window.addEventListener("scroll", revealElements)
+let ticking = false;
+
+window.addEventListener("scroll", () => {
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            revealElements();
+            ticking = false;
+        });
+        ticking = true;
+    }
+});
+
 
 // Initialize reveal on page load
 setTimeout(revealElements, 100)
