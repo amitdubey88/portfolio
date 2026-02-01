@@ -373,7 +373,7 @@ function createStars() {
         stars.push({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
-            r: Math.random() * 1.2 + 0.3,
+            r: Math.random() * 1.7 + 0.3,
             o: Math.random(),
             v: Math.random() * 0.15 + 0.05,
         });
