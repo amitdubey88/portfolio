@@ -13,6 +13,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+
+    // Achievement Counters Animation
+    const section = document.getElementById("achievements");
+    const counters = section.querySelectorAll(".achievement-number");
+
+    let hasAnimated = false;
+
+    const animateCounter = (el) => {
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || "";
+        const duration = 2000;
+
+        let start = 0;
+        const startTime = performance.now();
+
+        const update = (now) => {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // easeOut
+            const value = Math.floor(eased * target);
+            el.textContent = value + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                el.textContent = target + suffix;
+            }
+        };
+
+        requestAnimationFrame(update);
+    };
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasAnimated) {
+                    counters.forEach(animateCounter);
+                    hasAnimated = true;
+                    observer.disconnect();
+                }
+            });
+        },
+        { threshold: 0.4 }
+    );
+
+    observer.observe(section);
+
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
     const loadingScreen = document.getElementById('loading-screen');
@@ -371,6 +417,17 @@ drawStars();
 
 // Navbar Scroll Effect
 const navbar = document.getElementById('navbar');
+
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         navbar.classList.add('shadow-md');
@@ -402,33 +459,7 @@ const aboutObserver = new IntersectionObserver((entries) => {
 const aboutContent = document.getElementById('about-content');
 aboutObserver.observe(aboutContent);
 
-// Skills Animation
-const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const skillItem = entry.target;
-            skillItem.classList.add('animate-fadeInUp');
 
-            // Animate progress bar
-            setTimeout(() => {
-                const progressBar = skillItem.querySelector('.progress-bar');
-                const percentage = progressBar.getAttribute('data-percentage');
-                progressBar.style.width = `${percentage}%`;
-
-                // Update percentage text
-                const percentageText = skillItem.querySelector('.skill-percentage');
-                percentageText.textContent = `${percentage}%`;
-            }, 300);
-
-            skillObserver.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.skill-item').forEach((item, index) => {
-    item.style.animationDelay = `${index * 0.15}s`;
-    skillObserver.observe(item);
-});
 
 // Experience Cards Animation
 const experienceObserver = new IntersectionObserver((entries) => {
@@ -562,55 +593,11 @@ lazyImages.forEach(image => {
     lazyImageObserver.observe(image);
 });
 
-// Contact Form Handling
-const contactForm = document.getElementById('contact-form');
-const formStatus = document.getElementById('form-status');
-const submitBtn = document.getElementById('submit-btn');
-
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    // Show loading state
-    submitBtn.innerHTML = `
-                <span class="relative z-10">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 inline-block text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                </span>
-            `;
-    submitBtn.disabled = true;
-
-    // Simulate form submission (replace with actual form submission)
-    setTimeout(() => {
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-
-        console.log('Form submitted:', { name, email, message });
-
-        // Show success message
-        formStatus.classList.remove('hidden');
-        formStatus.classList.add('bg-green-900/50', 'border', 'border-green-500', 'text-green-200');
-        formStatus.innerHTML = 'Thank you! Your message has been sent successfully.';
-
-        // Reset form
-        contactForm.reset();
-
-        // Reset button
-        submitBtn.innerHTML = '<span class="relative z-10">Send Message</span><span class="absolute top-0 left-0 w-full h-full bg-white opacity-10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>';
-        submitBtn.disabled = false;
-
-        // Hide status message after 5 seconds
-        setTimeout(() => {
-            formStatus.classList.add('hidden');
-        }, 5000);
-    }, 1500);
 
 
 
 
-});
+
+
 
 

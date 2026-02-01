@@ -1,13 +1,107 @@
 /* imports */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Basics */
+/* GLOBAL RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+}
+
+/* STATIC GLOBAL BACKGROUND — NO SHARP BANDS */
+#global-bg {
+    position: absolute;
+    /* ⬅️ fixed hatao */
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    /* viewport cover */
+    height: 100%;
+    /* page ke saath stretch */
+    z-index: -3;
+
+    background: linear-gradient(180deg,
+            #1f2937 0%,
+            /* bg-dark-800 */
+            #111827 45%,
+            /* bg-dark-900 */
+            #0a0f1a 100%
+            /* bg-dark-950 */
+        );
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+
+/* STAR CANVAS */
+#star-background {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* REMOVE HARSH SECTION COLORS */
+section {
+    background: transparent !important;
+}
+
+/* =====================================
+   ULTRA TRANSPARENT NAVBAR
+   (Only stars visible behind)
+===================================== */
+
+#navbar {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Safety: scroll state bhi blank */
+/* ================================
+   NAVBAR STATES
+================================ */
+
+/* STATIC GLOBAL BACKGROUND */
+#global-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background: linear-gradient(180deg,
+            #1f2937 0%,
+            /* bg-dark-800 (lighter top) */
+            #111827 45%,
+            /* bg-dark-900 */
+            #0a0f1a 100%
+            /* bg-dark-950 (dark bottom) */
+        );
+}
+
+
+
+
+
+/* SCROLLED STATE: NORMAL BACKGROUND */
+#navbar.scrolled {
+    background: rgba(10, 15, 26, 1) !important;
+    /* same as bg-dark-950 */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Text readability */
+#navbar a,
+#navbar button,
+#navbar svg {
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.35);
 }
 
 /* Custom Scrollbar */
@@ -72,14 +166,16 @@
     }
 }
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+  from {
+      opacity: 0;
+    transform: translateY(24px);
+    filter: brightness(0.9);
     }
     to {
         opacity: 1;
         transform: translateY(0);
-    }
+    filter: brightness(1);
+  }
 }
 @keyframes fadeIn {
     from { opacity: 0; }
