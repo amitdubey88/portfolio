@@ -9,43 +9,58 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
-
-/* STATIC GLOBAL BACKGROUND — NO SHARP BANDS */
-#global-bg {
-    position: absolute;
-    /* ⬅️ fixed hatao */
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100vh;
-    /* viewport cover */
-    height: 100%;
-    /* page ke saath stretch */
-    z-index: -3;
-
-    background: linear-gradient(180deg,
-            #1f2937 0%,
-            /* bg-dark-800 */
-            #111827 45%,
-            /* bg-dark-900 */
-            #0a0f1a 100%
-            /* bg-dark-950 */
-        );
-}
-
 html,
 body {
-    min-height: 100%;
+  min-height: 100%;
+  background: linear-gradient(180deg,
+      #1b2332 0%,
+      /* slightly darker than #1f2937 */
+      #111827 35%,
+      #0b1220 65%,
+      #050812 100%);
 }
 
 
-/* STAR CANVAS */
-#star-background {
+body::after {
+    content: "";
     position: fixed;
     inset: 0;
-    z-index: -2;
     pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse at center,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(0, 0, 0, 0.25) 70%,
+            rgba(0, 0, 0, 0.45) 100%);
 }
+
+/* HERO LIGHT — subtle, no animation */
+#home::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+
+    background: radial-gradient(circle at center top,
+            rgba(120, 150, 255, 0.18),
+            rgba(120, 150, 255, 0.08) 35%,
+            rgba(120, 150, 255, 0.02) 55%,
+            rgba(120, 150, 255, 0) 70%);
+}
+
+#home img {
+    filter: brightness(1.05) contrast(1.03);
+}
+/* STAR CANVAS */
+#star-background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: transparent;
+  }
+
+
 
 /* REMOVE HARSH SECTION COLORS */
 section {
@@ -63,6 +78,7 @@ section {
     border: none !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
+    z-index: 100;
 }
 
 /* Safety: scroll state bhi blank */
@@ -295,18 +311,9 @@ section {
 .animate-delay-700 { animation-delay: 0.7s; }
 .animate-delay-800 { animation-delay: 0.8s; }
 .animate-delay-900 { animation-delay: 0.9s; }
-.animate-delay-1000 { animation-delay: 1s; }
-
-/* Canvas Background */
-#star-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+.animate-delay-1000 {
+    animation-delay: 1s;
 }
-
 /* Typing Effect */
 .typing-text::after {
     content: '|';
@@ -632,11 +639,15 @@ section {
 }
 
 .timeline-content {
-    background-color: #1f2937;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s;
+  background-color: #1f2937;
+  /* bg-dark-800 */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease,
+  box-shadow 0.3s ease;
+  position: relative;
+  z-index: 50;
 }
 
 
