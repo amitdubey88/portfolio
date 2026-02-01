@@ -20,6 +20,21 @@ body {
       #050812 100%);
 }
 
+/* ===============================
+   GLOBAL WARM TONE (EYE COMFORT)
+================================ */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+
+    background: rgba(255, 225, 170, 0.06);
+    mix-blend-mode: soft-light;
+}
+
 
 body::after {
     content: "";
