@@ -9,82 +9,10 @@
     <meta name="description"
         content="Portfolio website of Amit Dubey, a Salesforce Developer specializing in Apex, Lightning Web Components, and Salesforce Administration.">
     <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./dist/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Custom Tailwind Config -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            200: '#ddd6fe',
-                            300: '#c4b5fd',
-                            400: '#a78bfa',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                            800: '#5b21b6',
-                            900: '#4c1d95',
-                        },
-                        secondary: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            200: '#bfdbfe',
-                            300: '#93c5fd',
-                            400: '#60a5fa',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
-                        },
-                        dark: {
-                            700: '#374151',
-                            800: '#1f2937',
-                            900: '#111827',
-                            950: '#0a0f1a',
-                        },
-                    },
-                    boxShadow: {
-                        glow: '0 0 15px rgba(139, 92, 246, 0.5), 0 0 30px rgba(139, 92, 246, 0.3)',
-                        'glow-sm': '0 0 10px rgba(139, 92, 246, 0.4), 0 0 20px rgba(139, 92, 246, 0.2)',
-                        'glow-blue': '0 0 15px rgba(59, 130, 246, 0.5), 0 0 30px rgba(59, 130, 246, 0.3)',
-                    },
-                    animation: {
-                        'bounce-slow': 'bounce 3s infinite',
-                        'blink': 'blink 1s step-end infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'spin-slow': 'spin 8s linear infinite',
-                    },
-                    keyframes: {
-                        blink: {
-                            '0%, 100%': {
-                                opacity: '1'
-                            },
-                            '50%': {
-                                opacity: '0'
-                            },
-                        },
-                        float: {
-                            '0%, 100%': {
-                                transform: 'translateY(0)'
-                            },
-                            '50%': {
-                                transform: 'translateY(-10px)'
-                            },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 
 
     <!-- Custom Styles -->
@@ -1037,7 +965,7 @@
                 <!-- Project 5 -->
                 <div class="project-card bg-dark-800 rounded-lg overflow-hidden shadow-lg h-full card-3d">
                     <div class="h-48 bg-gradient-to-r from-secondary-600 to-primary-700 flex items-center justify-center
-                            transition-all duration-500 project-image relative overflow-hidden">
+                        transition-all duration-500 project-image relative overflow-hidden">
                         <div class="absolute inset-0 bg-black opacity-30"></div>
                         <h3 class="text-2xl font-bold text-white px-4 text-center relative z-10">
                             Recruitment Management System
@@ -1154,8 +1082,8 @@
             </div>
             <div class="space-y-8">
                 <!-- MCA -->
-                <div class="education-card bg-dark-800 rounded-xl p-6 md:p-8 border border-primary-700/40 shadow-lg
-                       transform transition-all duration-500 hover:scale-[1.02] hover:shadow-glow card-3d">
+                <div class="education-card bg-dark-800 rounded-xl p-6 md:p-8 border-primary-700/40 shadow-lg
+                      transform transition-all duration-500 hover:scale-[1.02] hover:shadow-glow border">
                     <div class="flex flex-col md:flex-row items-start gap-6">
                         <div class="flex items-center justify-center w-14 h-14 rounded-lg
                                bg-gradient-to-r from-secondary-500 to-primary-600 text-white">
@@ -1180,8 +1108,8 @@
                 </div>
 
                 <!-- BCA -->
-                <div class="education-card bg-dark-800 rounded-xl p-6 md:p-8 border border-secondary-700/40 shadow-lg
-                       transform transition-all duration-500 hover:scale-[1.02] hover:shadow-glow card-3d">
+                <div class="education-card bg-dark-800 rounded-xl p-6 md:p-8 border-secondary-700/40 shadow-lg
+                      transform transition-all duration-500 hover:scale-[1.02] hover:shadow-glow border">
                     <div class="flex flex-col md:flex-row items-start gap-6">
                         <div class="flex items-center justify-center w-14 h-14 rounded-lg
                         bg-gradient-to-r from-secondary-500 to-primary-600 text-white">
@@ -1208,8 +1136,8 @@
                     </div>
                 </div>
                 <!-- Intermediate -->
-                <div class="education-card bg-dark-800 rounded-xl p-6 md:p-8 border border-primary-700/30 shadow-md
-                transform transition-all duration-500 hover:shadow-glow card-3d">
+                <div class="education-card bg-dark-800 rounded-xl p-6 md:p-8 border-primary-700/30 shadow-md
+                     transition-all duration-500 hover:shadow-glow border">
                     <div class="flex flex-col md:flex-row items-start gap-6">
                         <div class="flex items-center justify-center w-14 h-14 rounded-lg
                                bg-gradient-to-r from-secondary-500 to-primary-600 text-white">
@@ -1232,8 +1160,8 @@
                     </div>
                 </div>
                 <!-- Matriculation -->
-                <div class="education-card bg-dark-800 rounded-xl p-6 md:p-8 border border-secondary-700/30 shadow-md
-                transform transition-all duration-500 hover:shadow-glow card-3d">
+                <div class="education-card bg-dark-800 rounded-xl p-6 md:p-8 border-secondary-700/30 shadow-md
+                transform transition-all duration-500 hover:shadow-glow border">
                     <div class="flex flex-col md:flex-row items-start gap-6">
                         <div class="flex items-center justify-center w-14 h-14 rounded-lg
                                bg-gradient-to-r from-secondary-500 to-primary-600 text-white">
@@ -1292,7 +1220,8 @@
                 <!-- Toggle Button -->
                 <div class="text-center mt-6">
                     <button id="toggleCerts"
-                        class="px-6 py-2 rounded-full bg-gradient-to-r from-secondary-500 to-primary-600 text-white font-medium hover:shadow-glow transition-all">
+                        class="px-6 py-2 rounded-full bg-gradient-to-r from-secondary-500 to-primary-600 text-white
+                        font-medium hover:shadow-glow transition-all duration-500">
                         View Certifications
                     </button>
                 </div>
@@ -1399,7 +1328,8 @@
                     </h3>
                     <div class="space-y-6">
                         <div
-                            class="education-card bg-dark-800 rounded-lg p-6 transform transition-all duration-500 hover:scale-105 hover:shadow-glow opacity-0 card-3d">
+                            class="education-card bg-dark-800 rounded-lg p-6 transform transition-all duration-500
+                            hover:shadow-glow opacity-0 border border-gray-700">
                             <div class="flex flex-col md:flex-row items-start gap-4">
                                 <div
                                     class="bg-gradient-to-r from-secondary-500 to-primary-600 p-4 rounded-lg text-white">
@@ -1419,7 +1349,8 @@
                             </div>
                         </div>
                         <div
-                            class="education-card bg-dark-800 rounded-lg p-6 transform transition-all duration-500 hover:scale-105 hover:shadow-glow opacity-0 card-3d">
+                            class="education-card bg-dark-800 rounded-lg p-6 transform transition-all duration-500
+                            hover:shadow-glow opacity-0 border border-gray-700">
                             <div class="flex flex-col md:flex-row items-start gap-4">
                                 <div
                                     class="bg-gradient-to-r from-secondary-500 to-primary-600 p-4 rounded-lg text-white">
@@ -1441,7 +1372,8 @@
                             </div>
                         </div>
                         <div
-                            class="education-card bg-dark-800 rounded-lg p-6 transform transition-all duration-500 hover:scale-105 hover:shadow-glow opacity-0 card-3d">
+                            class="education-card bg-dark-800 rounded-lg p-6 transform transition-all duration-500
+                            hover:shadow-glow opacity-0 border border-gray-700">
                             <div class="flex flex-col md:flex-row items-start gap-4">
                                 <div
                                     class="bg-gradient-to-r from-secondary-500 to-primary-600 p-4 rounded-lg text-white">
@@ -1469,13 +1401,16 @@
                         <i class="fas fa-file-alt mr-2 text-secondary-400"></i> Highlights
                     </h3>
                     <div
-                        class="bg-dark-800 p-6 rounded-lg shadow-xl mb-8 transform transition-all duration-500 hover:scale-105 hover:shadow-glow-blue">
+                        class="bg-dark-800 p-6 rounded-lg shadow-xl mb-8 transform transition-all duration-500
+                        hover:shadow-glow-blue">
                         <p class="text-lg text-gray-300 mb-4">
                             My detailed resume provides a comprehensive look at my projects, achievements, and technical
                             expertise.
                         </p>
                         <a href="./files/Amit_Dubey_Resume.pdf" download
-                            class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-secondary-500 to-primary-600 rounded-full text-white font-semibold hover:shadow-glow transition-all duration-300 transform hover:scale-[1.05] mt-4">
+                            class="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-secondary-500
+                            to-primary-600 rounded-full text-white font-semibold hover:shadow-glow transition-all
+                            duration-300 transform mt-4">
                             <i class="fas fa-file-pdf text-xl"></i>
                             <span class="ml-2">Download Resume</span>
                         </a>

@@ -59,7 +59,6 @@ section {
 
 #navbar {
     background: transparent !important;
-    backdrop-filter: none !important;
     box-shadow: none !important;
     border: none !important;
     -webkit-backdrop-filter: none !important;
