@@ -876,6 +876,7 @@ transform 0.6s ease;
         position: absolute;
         top: 0;
         left: 0;
+        opacity: 0.6;
     }
 }
 
@@ -883,13 +884,7 @@ transform 0.6s ease;
     --vh: 100svh;
 }
 
-.hero {
-    min-height: var(--vh);
-}
-
-
-@media (max-width: 768px) {
-    #star-background {
-        opacity: 0.6;
-    }
+#home {
+    min-height: 100svh;
+    /* stable on mobile */
 }
