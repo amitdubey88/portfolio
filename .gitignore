@@ -1,0 +1,7 @@
+.sfdx/
+.vscode/
+.cursor/
+.agent/
+design-system/*
+node_modules/*
+.npm/*
